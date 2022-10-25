@@ -6,9 +6,8 @@ import (
         "strings"
         "github.com/spf13/viper"
 )
-func viper_load() {
-// Config
-        viper.SetConfigName("default") // config file name without extension
+func viper_load(s string) {
+        viper.SetConfigName(s) // config file name without extension
         viper.SetConfigType("yaml")
         viper.AddConfigPath(".")
         viper.AddConfigPath("./config/") // config file path
@@ -21,15 +20,4 @@ func viper_load() {
                 fmt.Println("fatal error config file: default \n", err)
                 os.Exit(1)
         }
-// // Set default value
-//         viper.SetDefault("app.linetoken", "DefaultLineTokenValue")
-
-// // Declare var
-//         mode := viper.GetString("eventor.mode")
-//         server_port :=  viper.GetString("services.server.port")
-
-// // Print
-//         fmt.Println("---------- Example ----------")
-//         fmt.Println("mode :",mode)
-//         fmt.Println("server port :",server_port)
 }
