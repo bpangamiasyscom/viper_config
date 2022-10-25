@@ -1,0 +1,43 @@
+eventor:
+  mode: "dev" # "dev": development; "pro": production.
+  logfile: "./log/eventor.log"
+  misc:
+    num_of_verification_code: 6  # length of of verification code
+
+
+
+epic:
+  epics: "standard freestyle" # supported Epics
+  standard:
+    authentication: "wechat" # supported authentication methods
+    guest_mode: true
+    admin_init: "12345678901" # phone of the initial epic admin
+  freestyle:
+    guest_mode: true
+    admin_init: ""
+
+
+
+services:
+  server:
+    port: 3836 # service listening port. use 13836 for dev deployment
+  db:
+    name: "eventor"
+    address: "127.0.0.1" # ip address(es) or domain name
+    port: 2022 # service port
+    mongodb:
+      auth: true  # if true, will use default authentication admin:Amiasims2022
+
+3rd_party:
+  qrcode:
+    logofile: "./assets/images/log.png"
+  email:
+    service: "smtp.office365.com"
+    host: "smtp.office365.com"
+    username: "email.eventor@amiasys.com"
+    password: "#EmailFromEventor2022"
+    port: 587
+  aliyun_vod: # aliyun credentials
+    region_id: "cn-shanghai"
+    access_key: "LTAI5tK42cNFeqfTFXbzHkDP"
+    access_secret: "7mFt5MYOUytpvk4hus8whuDgn0T1h2"
